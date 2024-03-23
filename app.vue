@@ -1,5 +1,9 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <StudentList />
   </div>
 </template>
+
+<script setup lang="ts">
+import StudentList from './pages/StudentList'
+</script>
