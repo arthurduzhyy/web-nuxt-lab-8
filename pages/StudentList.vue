@@ -26,6 +26,14 @@
   </div>
 </template>
 <script setup lang="ts">
+const pageTitle = ref('Список товарів')
+
+useHead(() => {
+  return {
+    title: pageTitle.value
+  }
+})
+
 interface Product {
   id: number
   title: string
@@ -78,8 +86,6 @@ const columns = [
 const { data, pending } = await useLazyAsyncData<Product>('products', () => $fetch('https://dummyjson.com/products'))
 
 const products = data.value.products
-
-console.log(products)
 
 const q = ref('')
 
